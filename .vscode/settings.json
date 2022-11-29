@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7433446c-cf89-4346-9bb9-816a8fb76f13/AppServices/subscriptions/7433446c-cf89-4346-9bb9-816a8fb76f13/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/crud-project",
+    "appService.deploySubpath": "."
+}

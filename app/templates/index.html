@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Provador de Internet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>
+    <link rel="stylesheet" tyoe="text/css" href="font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+</head>
+
+<body>
+    <!-- <div style="width: 100px; height: 9000px;background-color: rgb(102, 0, 255);" ></div> -->
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Lista de Clientes</h1>
+    </div>
+
+
+    
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Digite o CPF...">
+        </form>
+    </div>
+
+    <div class="col-10 m-auto pt-3 pb-2 text-center">
+        <a href="/form" class="btn btn-primary btn-lg btn-block">Registrar</a>
+    </div>
+    
+
+
+    <div class="col-10 m-auto pb-2 text-center">
+        <table class="table table-striped table-hover">
+          <thead class="table">
+            <tr>
+              <th scope="col">Id</th>   
+              <th scope="col">Nome</th>
+              <th scope="col">Data de Nascimento</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Endereço</th>
+              <th scope="col">Contato</th>
+              <th scope="col">Date/Time</th>
+
+
+              {% for list in database %}
+              <tr>
+                 <th>{{list.id}}</th>
+                 <td>{{list.nome}}</td>
+                 <td>{{list.birthDate}}</td>
+                 <td>{{list.cpf}}</td>
+                 <td>{{list.address}}</td>
+                 <td>{{list.contact}}</td>
+                 <td>{{list.updateOn}}</td>
+                     
+                 <td>  
+                     <a href="/edit/{{list.id}}/" class="fas fa-edit col-1" style='font-size:17px'> </a>
+                     <a href="/delete/{{list.id}}/" class="fa fa-trash col-1" style='font-size:17px'></a>
+                    </td>
+                </tr>
+             {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+   <!-- <div class="pagination">
+        {% if list.has_previous %}
+            <a href="?page={{list.previous_page_number}}"> < </a>
+        {% endif %}
+    
+        {{list.number}}
+    
+        {% if list.has_next %}
+            <a href="?page={{list.next_page_number}}"> > </a>
+        {% endif %}
+    </div> -->
+</body> 
+</html>
